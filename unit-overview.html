@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Overview – Two Wolves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #223046;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --background-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--background-color);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .site-header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            padding: 6px 0;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        .page-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-intro h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.75rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .page-intro p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: rgba(44, 62, 80, 0.8);
+            font-size: 1.05rem;
+        }
+        
+        .content-section {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 15px 45px rgba(34, 48, 70, 0.12);
+            padding: 32px;
+            margin-bottom: 30px;
+        }
+
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+
+        .content-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .content-section p, .content-section li {
+            color: rgba(44, 62, 80, 0.9);
+            font-size: 1.05rem;
+        }
+        
+        .content-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .content-section > ul > li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .content-section > ul > li::before {
+            content: '\f101';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-color);
+        }
+
+        .content-section a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Table Styles */
+        .overview-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+        .overview-table th, .overview-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .overview-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        .overview-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .overview-table li {
+            margin-bottom: 5px;
+        }
+        .overview-table strong {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .page-intro h1 {
+                font-size: 2.2rem;
+            }
+            .content-section {
+                padding: 20px;
+            }
+            .overview-table {
+                font-size: 0.8rem;
+            }
+            .overview-table th, .overview-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
+                    <h1>Two Wolves</h1>
+                </div>
+                <nav aria-label="Primary">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About the Novel</a></li>
+                        <li><a href="characters.html">Characters</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="portfolio.html">Portfolio Tasks</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="page-intro" aria-labelledby="overview-heading">
+                <h1 id="overview-heading">Unit Overview</h1>
+                <p>
+                    An at-a-glance summary of the 7-week *Two Wolves* unit, including learning intentions, success criteria, and relevant ACARA Achievement Standards.
+                </p>
+            </section>
+
+            <section class="content-section" aria-labelledby="standards-heading">
+                <h2 id="standards-heading">ACARA Achievement Standards</h2>
+                <p>This unit provides students with opportunities to demonstrate the following Year 7 English Achievement Standards:</p>
+                <ul>
+                    <li><strong>Literature:</strong> <em>ACELT1619</em> - Interpret and analyse how ideas are represented in texts.</li>
+                    <li><strong>Literature:</strong> <em>ACELT1620</em> - Analyse how texts are made and how authors use language, setting, and plot to construct characters.</li>
+                    <li><strong>Literature:</strong> <em>ACELT1800</em> - Identify and explore ideas and viewpoints about challenging themes in texts.</li>
+                    <li><strong>Literacy:</strong> <em>ACELY1720</em> - Plan, draft and publish imaginative, informative and persuasive texts.</li>
+                    <li><strong>Literacy:</strong> <em>ACELY1725</em> - Use a range of software, including word processing, to create, edit and publish texts.</li>
+                    <li><strong>Literacy:</strong> <em>ACELY1731</em> - Analyse and explain the ways text structures and language features shape meaning and influence audience response.</li>
+                </ul>
+            </section>
+
+            <section class="content-section" aria-labelledby="plan-heading">
+                <h2 id="plan-heading">Weekly Learning Plan</h2>
+                <table class="overview-table">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Learning Intention</th>
+                            <th>Success Criteria</th>
+                            <th>Lesson Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong><br><em>Initial Response</em></td>
+                            <td>To understand the central parable of the novel and make predictions about the text.</td>
+                            <td><strong>I can:</strong><br><ul><li>Explain the meaning of the "two wolves" parable.</li><li>Make logical predictions about the plot and characters.</li></ul></td>
+                            <td>Introduce parable, make predictions, character mapping, and begin reading Ch 1-4.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong><br><em>Reading & Comprehension</em></td>
+                            <td>To analyse how the author builds tension and explores the theme of trust.</td>
+                            <td><strong>I can:</strong><br><ul><li>Identify moments that create tension in the text.</li><li>Find evidence of trust and distrust between characters.</li></ul></td>
+                            <td>Read Ch 5-12. Focus on the cabin setting, the discovery of the money, and the family's secrets.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong><br><em>Reading & Comprehension (Part 2)</em></td>
+                            <td>To understand Ben's changing relationship with his father and the moral dilemmas he faces.</td>
+                            <td><strong>I can:</strong><br><ul><li>Describe how Ben's feelings towards his father change.</li><li>Identify a key moral choice Ben has to make.</li></ul></td>
+                            <td>Read Ch 13-21. Focus on the fight over the notebook, Ben's decision to run away, and being trapped in the cabin.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong><br><em>Close Study (Part 1)</em></td>
+                            <td>To understand and apply the TEEL structure to write an analytical paragraph.</td>
+                            <td><strong>I can:</strong><br><ul><li>Define the components of TEEL.</li><li>Write a structured paragraph using textual evidence.</li></ul></td>
+                            <td>Explicitly teach TEEL. Students write two practice paragraphs on challenging settings and characters.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong><br><em>Significance</em></td>
+                            <td>To connect the novel to its real-world context and articulate a viewpoint on a moral dilemma.</td>
+                            <td><strong>I can:</strong><br><ul><li>Explain how a real crime inspired the novel.</li><li>Participate in a formal debate, using evidence from the text.</li></ul></td>
+                            <td>Finish reading the novel. Watch author video and hold a class debate on Ben's choices.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong><br><em>Synthesis & Essay Planning</em></td>
+                            <td>To plan a structured analytical text response essay.</td>
+                            <td><strong>I can:</strong><br><ul><li>Write a clear contention for an essay topic.</li><li>Plan three body paragraphs with topic sentences and evidence.</li></ul></td>
+                            <td>Introduce the final essay task. Students use scaffolds to plan their introduction and body paragraphs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong><br><em>Informed Reaction & Assessment</em></td>
+                            <td>To demonstrate understanding of the novel in an analytical essay and a creative task.</td>
+                            <td><strong>I can:</strong><br><ul><li>Write a full analytical essay under test conditions.</li><li>Create a creative response that shows deep engagement with the text.</li></ul></td>
+                            <td>Students complete the summative essay. Introduce and begin work on creative showcase tasks.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Two Wolves Student Portfolio</p>
+        </div>
+    </footer>
+</body>
+</html>
