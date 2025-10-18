@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Resource Guide – Two Wolves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #223046;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --background-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--background-color);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .site-header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            padding: 6px 0;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        .page-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-intro h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.75rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .page-intro p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: rgba(44, 62, 80, 0.8);
+            font-size: 1.05rem;
+        }
+        
+        .content-section {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 15px 45px rgba(34, 48, 70, 0.12);
+            padding: 32px;
+            margin-bottom: 30px;
+        }
+
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+
+        .content-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .content-section h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .content-section p, .content-section li {
+            color: rgba(44, 62, 80, 0.9);
+            font-size: 1.05rem;
+        }
+        
+        .content-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .content-section > ul > li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .content-section > ul > li::before {
+            content: '\f101';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-color);
+        }
+        
+        .lesson-details ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        
+        .lesson-details li {
+            list-style-type: disc;
+            color: var(--secondary-color);
+            padding-left: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .lesson-details li::before {
+             content: '';
+        }
+        
+        .step-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .step-block strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .content-section a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tabbed Interface Styles */
+        .tab-container {
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        }
+        .tab-button {
+            background-color: transparent;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px; /* Aligns with the bottom border */
+        }
+        .tab-button:hover {
+            color: var(--primary-color);
+        }
+        .tab-button.active {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+            background-color: #f8f9fa;
+        }
+        .tab-content {
+            display: none; /* Hidden by default */
+        }
+        .tab-content.active {
+            display: block; /* Shown when active */
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .page-intro h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+            .tab-button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
+                    <h1>Two Wolves</h1>
+                </div>
+                <nav aria-label="Primary">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About the Novel</a></li>
+                        <li><a href="characters.html">Characters</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="portfolio.html">Portfolio Tasks</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="page-intro" aria-labelledby="guide-heading">
+                <h1 id="guide-heading">Teacher Resource Guide: Two Wolves Unit</h1>
+                <p>
+                    A comprehensive guide to implementing the 7-week Year 7 English unit on Tristan Bancks' novel, *Two Wolves*.
+                </p>
+            </section>
+
+            <section class="content-section" aria-labelledby="scope-heading">
+                <h2 id="scope-heading">Scope & Sequence</h2>
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openTab(event, 'week1')">Week 1</button>
+                        <button class="tab-button" onclick="openTab(event, 'week2')">Week 2</button>
+                        <button class="tab-button" onclick="openTab(event, 'week3')">Week 3</button>
+                        <button class="tab-button" onclick="openTab(event, 'week4')">Week 4</button>
+                        <button class="tab-button" onclick="openTab(event, 'week5')">Week 5</button>
+                        <button class="tab-button" onclick="openTab(event, 'week6')">Week 6</button>
+                        <button class="tab-button" onclick="openTab(event, 'week7')">Week 7</button>
+                    </div>
+
+                    <!-- Week 1 Content -->
+                    <div id="week1" class="tab-content active">
+                        <h3>Week 1: Initial Response</h3>
+                        <h4>Lesson 1: The Parable & Predictions</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Facilitate a class discussion on the choices students make.</li>
+                                <li>Introduce the "two wolves" parable and watch the video on the student site.</li>
+                                <li>Students make predictions about the novel based on the cover and blurb.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Student Portfolio Site (About page)</li>
+                                <li>Novel covers and blurbs</li>
+                                <li>Whiteboard/Smartboard</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 2: Character Mapping & Reading</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <div class="step-block">
+                                <strong>1. Set the Stage & Activate Prior Knowledge (5 minutes)</strong>
+                                <p>Before class, draw a large box in the centre of the whiteboard. Label it **"The Silver Family"**. Pose the question: "We've met the Silver family. Who are the main members of Ben's immediate family? Let's build a family tree to see how they all connect." Use a Think-Pair-Share to gather initial ideas.</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>2. Build the Core Structure (10 minutes)</strong>
+                                <p>Ask the pairs to share who they came up with. As students call out names (Ben, Olive, Ray, April), draw a box for each. Draw lines to connect Ray and April as partners, and Ben and Olive as their children. Ask the class for each person's role (Father, Mother, Son, Daughter).</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>3. Add Extended Family & Key Characters (5 minutes)</strong>
+                                <p>Ask: "Who else is mentioned in the family?" Students should identify **Pop**, **Nan**, and **Uncle Chris**. Draw new boxes for them, connecting them to Ray. Also add **Golden** (the dog) and **Bonzo** (the rabbit) in a different colour to show their importance.</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>4. Add Detail, Traits, and Evidence (15 minutes)</strong>
+                                <p>Go through each character and ask the class for descriptive words or key facts from the text. For each trait, ask for the evidence. (e.g., for Ben: "overweight, curious, 'Cop'". Evidence: "He's called Cop because he asks so many questions"). Write the traits and a key quote for each character. Use sticky notes for relationships (e.g., "Not close," "Argues a lot").</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>5. Consolidate and Connect to Workbooks (5 minutes)</strong>
+                                <p>Review the completed tree. Ask: "What does this tell us about the Silver family?" Instruct students to ensure their Cornell Notes 'Characters' section is as detailed as the class tree.</p>
+                            </div>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Large whiteboard or butcher's paper</li>
+                                <li>Markers in different colours</li>
+                                <li>Student notebooks (Cornell Notes)</li>
+                                <li>Sticky notes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 2 Content -->
+                    <div id="week2" class="tab-content">
+                        <h3>Week 2: Reading & Comprehension</h3>
+                        <h4>Lesson 3: The Holiday & The Chase (Chapters 5-8)</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <div class="step-block">
+                                <strong>1. Warm-up & Recap (5 mins)</strong>
+                                <p>Ask students to turn to a partner and share one thing they found out about Ben's family in the first four chapters. Share a few responses with the class to re-engage with the text.</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>2. Active Reading (25 mins)</strong>
+                                <p>Explain the reading goal: "As you read Chapters 5-8, I want you to look for moments that create tension or make you feel nervous for the family. Highlight or write down one key quote that shows this tension."</p>
+                                <p><strong>Option A (Reading Circles):</strong> Divide students into groups of 4. Assign roles (e.g., Discussion Director, Summariser, Quote Finder, Connector). Give them 25 minutes to read the chapters together and discuss their roles.</p>
+                                <p><strong>Option B (Silent Reading):</strong> Students read the chapters silently at their own pace. They should complete the Cornell Notes for these chapters as they read.</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>3. Class Discussion (15 mins)</strong>
+                                <p>Bring the class back together. Use these prompts to guide the discussion:</p>
+                                <ul>
+                                    <li>"How does the author describe the cabin? What words does he use to make it feel threatening?" (e.g., 'Dark. Sad. Villainous.')</li>
+                                    <li>"Ben's father says, 'You want me to put a nappy on you? Just hit it with your shoe.' What does this tell us about their relationship?"</li>
+                                    <li>"Why is Ben so scared of nature? Find a quote that shows his fear."</li>
+                                    <li>"The chapter ends with Ben finding the bag of money. What do you predict is inside it? Why is it a secret?"</li>
+                                </ul>
+                            </div>
+                            <div class="step-block">
+                                <strong>4. Wrap-up & Workbook Check (5 mins)</strong>
+                                <p>Have students turn to their Cornell Notes for Chapters 5-8. Give them 5 minutes to fill in any missing details or write down any questions they have. Circulate and check for understanding.</p>
+                            </div>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Class set of novels</li>
+                                <li>Workbooks</li>
+                                <li>Highlighters</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 4: The Cabin & The Secret (Chapters 9-12)</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <div class="step-block">
+                                <strong>1. Warm-up & Connection (5 mins)</strong>
+                                <p>Start with a "Quick Write". Prompt: "Imagine you found a bag full of money hidden in your house. What would be your first thought? What would you do?" Give students 3 minutes to write, then ask for 2-3 volunteers to share.</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>2. Active Reading (25 mins)</strong>
+                                <p>Set the reading goal for Chapters 9-12: "Pay close attention to the theme of trust. Who is lying? Who is being honest? Find one quote that shows a character is not being truthful."</p>
+                                <p><strong>Option A (Paired Reading):</strong> Have students read the chapters in pairs, taking turns to read aloud. They can pause and discuss after each chapter.</p>
+                                <p><strong>Option B (Independent Reading):</strong> Students read silently, focusing on finding evidence for the theme of trust and completing their Cornell Notes.</p>
+                            </div>
+                            <div class="step-block">
+                                <strong>3. Focused Discussion (15 mins)</strong>
+                                <p>Lead a discussion centered on the family's secrets and the theme of trust:</p>
+                                <ul>
+                                    <li>"Ben's Mum tells him they sold the wreckers. Do you think Ben believes her? Why or why not?"</li>
+                                    <li>"Ben's dad buys everyone presents, including a diamond ring for Mum. How does this change the mood in the family? Does it make everything okay?"</li>
+                                    <li>"Ben thinks, 'Did it matter where the money had come from? A million dollars could buy a lot of happy.' What does this tell us about his internal conflict?"</li>
+                                    <li>"Why is it important that Ben and Olive build a raft together and keep it a secret?"</li>
+                                </ul>
+                            </div>
+                            <div class="step-block">
+                                <strong>4. Wrap-up & Quote Collection (5 mins)</strong>
+                                <p>Instruct students to ensure they have filled out the 'Important Quotes' section of their Cornell Notes for these chapters. Tell them: "The quotes you collect today will be very useful for your TEEL paragraphs next week, so make sure they are good ones!"</p>
+                            </div>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Class set of novels</li>
+                                <li>Workbooks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 3 Content -->
+                    <div id="week3" class="tab-content">
+                        <h3>Week 3: Reading & Comprehension (Part 2)</h3>
+                        <h4>Lesson 5: The Hunt & The Notebook</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Students read Chapters 13-16.</li>
+                                <li>Analyse Ben's changing relationship with his father and the fight over the notebook.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Class set of novels</li>
+                                <li>Workbooks</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 6: Trapped & The Hole</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Students read Chapters 17-21.</li>
+                                <li>Discuss Ben's decision to run away and the moral dilemmas he faces.</li>
+                                <li>Students complete all remaining Cornell Notes.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Class set of novels</li>
+                                <li>Workbooks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 4 Content -->
+                    <div id="week4" class="tab-content">
+                        <h3>Week 4: Close Study (Part 1)</h3>
+                        <h4>Lesson 7: Introducing TEEL</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Explicitly teach the TEEL paragraph structure using the Writing Booklet.</li>
+                                <li>As a class, analyse the model paragraph on "Nature as a challenging setting".</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Writing a Text Response Booklet</li>
+                                <li>Projector/Whiteboard</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 8: Practice Paragraphs</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Students write two practice TEEL paragraphs: one on challenging settings, one on Ray as a challenging character.</li>
+                                <li>Instructions are on the student Portfolio Tasks page.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Student Portfolio Site (Portfolio Tasks page)</li>
+                                <li>Writing Booklet</li>
+                                <li>Novels and Workbooks for reference</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 5 Content -->
+                    <div id="week5" class="tab-content">
+                        <h3>Week 5: Significance</h3>
+                        <h4>Lesson 9: Finishing the Novel</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Read Chapters 22-38, the final section of the novel.</li>
+                                <li>Discuss the resolution and Ben's final choice with the money and his father.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Class set of novels</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 10: Author's Inspiration & Debate</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Show the Tristan Bancks video discussing the real-life crime that inspired the novel.</li>
+                                <li>Hold a formal class debate: "Ben was right to hide the money from his parents."</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Tristan Bancks Author Video (Resource Hub)</li>
+                                <li>Projector</li>
+                                <li>Debate instructions/topics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 6 Content -->
+                    <div id="week6" class="tab-content">
+                        <h3>Week 6: Synthesis & Essay Planning</h3>
+                        <h4>Lesson 11: Essay Introduction</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Hand out the final essay topic and rubric (published on Portfolio Tasks page).</li>
+                                <li>Students use the Introduction Scaffold in their Writing Booklet to plan their essay introduction.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Student Portfolio Site (Portfolio Tasks page)</li>
+                                <li>Writing Booklet</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 12: Planning Body Paragraphs</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Students use their Cornell Notes and scaffold to plan their three body paragraphs.</li>
+                                <li>Teacher circulates to provide feedback on plans.</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Novels and Workbooks for reference</li>
+                                <li>Writing Booklet</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 7 Content -->
+                    <div id="week7" class="tab-content">
+                        <h3>Week 7: Informed Reaction & Assessment</h3>
+                        <h4>Lessons 13-14: Summative Essay</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Students write their analytical text response essay under test conditions (2 lessons, open-book).</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Essay prompt and rubric</li>
+                                <li>Novels and Workbooks</li>
+                            </ul>
+                        </div>
+
+                        <h4>Lesson 15: Creative Showcase</h4>
+                        <div class="lesson-details">
+                            <strong>Instructions:</strong>
+                            <ul>
+                                <li>Introduce the creative task options from the Reading Australia "Informed Reaction" section.</li>
+                                <li>Students choose a task and begin work (e.g., write an alternative ending, plan a film trailer).</li>
+                            </ul>
+                            <strong>Resources Required:</strong>
+                            <ul>
+                                <li>Creative task list</li>
+                                <li>Computers, art supplies, or paper as needed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="resources-heading">
+                <h2 id="resources-heading">Resource Hub</h2>
+                <ul>
+                    <li><a href="https://readingaustralia.com.au/lesson/two-wolves/" target="_blank">Reading Australia Resources</a></li>
+                    <li><a href="https://your-username.github.io/Two_Wolves/" target="_blank">Student Portfolio Site</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" aria-labelledby="implementation-heading">
+                <h2 id="implementation-heading">Implementation Guide</h2>
+                <p>Use this guide to implement the unit plan week by week. Ensure all website updates are completed before the relevant lesson. The student-facing website should be updated at the end of Week 3 to include the Portfolio Tasks.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Two Wolves Student Portfolio</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Tab Functionality
+        function openTab(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tabbuttons;
+
+            // Get all elements with class="tab-content" and hide them
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Get all elements with class="tab-button" and remove the class "active"
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+
+            // Show the specific tab content
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+
+            // Add the "active" class to the button that opened the tab
+            evt.currentTarget.className += " active";
+        }
+
+        // Set the default tab to be open on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find the first tab button and click it
+            const firstTabButton = document.querySelector('.tab-button');
+            if(firstTabButton){
+                firstTabButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
